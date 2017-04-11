@@ -1,11 +1,23 @@
 <?php 
 require __DIR__ .'/db-connection.php';
+require __DIR__ .'/input.php';
 
-$page = 1;
 $limit = 4;
-$offset = (isset($_GET['page'])) ? (($_GET['page'] -1) * $limit) : 0;
-$parks = $connection->query("SELECT * FROM national_parks LIMIT {$limit} OFFSET {$offset}");
+function getLastPage($connection, $limit) {
+	$statement = $connection->query("SELECT count(*) from national_parks");
+	$count = $statement->fetch()[0];
+	$lastPage = ceil($count/$limit);
+	return $lastPage;
+}
 
+$page = Input::get('page', 1);
+if($page <1 || !is_numeric($page)) {
+	header("location: national_parks.php?page=1");
+}
+
+$offset = ($page - 1) * $limit;
+$statement = $connection->query("SELECT * FROM national_parks LIMIT $limit OFFSET $offset");
+$parks = $statement->fetchAll(PDO::FETCH_ASSOC);
  ?>
 
 <!DOCTYPE html>
@@ -42,7 +54,7 @@ $parks = $connection->query("SELECT * FROM national_parks LIMIT {$limit} OFFSET 
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<a href="">Previous</a>
-		<a href="">Next</a>
+		 <a href="$page"></a>
+		 <a href=""></a>
 	</div>
 </body>
