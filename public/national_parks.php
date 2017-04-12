@@ -114,23 +114,23 @@ extract(pageController($connection));
 			<form>
   				<div class="form-group">
     				<label for="exampleInputEmail1">Park Name</label>
-    				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    				<input type="email" class="form-control" id="parkName" placeholder="Park Name">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Location</label>
-    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    				<input type="password" class="form-control" id="location" placeholder="Location">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Area in Acres</label>
-    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    				<input type="password" class="form-control" id="areaInAcres" placeholder="Area in Acres">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Date Established</label>
-    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    				<input type="password" class="form-control" id="dateEstablished" placeholder="Date Established">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Description</label>
-    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    				<input type="password" class="form-control" id="description" placeholder="Description">
   				</div>
   				<button type="submit" class="btn btn-default">Submit</button>
 			</form>
