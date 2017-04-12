@@ -134,7 +134,7 @@ extract(pageController($connection));
     				<label for="exampleInputPassword1">Description</label>
     				<input type="text" class="form-control" name="description" placeholder="Description">
   				</div>
-  				<button type="submit" class="btn btn-default" value="Submit">Submit</button>
+  				<input type="submit" class="btn btn-default" value="Submit"></input>
 			</form>
 		</main>
 
