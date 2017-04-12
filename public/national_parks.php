@@ -89,6 +89,7 @@ extract(pageController($connection));
 						<th>Location: </th>
 						<th>Area in Acres: </th>
 						<th>Date Established: </th>
+						<th>Description: </th>
 					</tr>
 					<?php foreach($parks as $park): ?>
 						<tr>
@@ -96,6 +97,7 @@ extract(pageController($connection));
 							<td><?= $park['location'] ?></td>
 							<td><?= $park['area_in_acres']?></td>
 							<td><?= $park['date_established']?></td>
+							<td><?= $park['description']?></td>
 						</tr>
 					<?php endforeach; ?>	
 				</table>
@@ -109,7 +111,31 @@ extract(pageController($connection));
 				<?php endif; ?>
 
 			</section>
+			<form>
+  				<div class="form-group">
+    				<label for="exampleInputEmail1">Park Name</label>
+    				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  				</div>
+  				<div class="form-group">
+    				<label for="exampleInputPassword1">Location</label>
+    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  				</div>
+  				<div class="form-group">
+    				<label for="exampleInputPassword1">Area in Acres</label>
+    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  				</div>
+  				<div class="form-group">
+    				<label for="exampleInputPassword1">Date Established</label>
+    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  				</div>
+  				<div class="form-group">
+    				<label for="exampleInputPassword1">Description</label>
+    				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  				</div>
+  				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
 		</main>
+
 		<!-- minified jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	
