@@ -18,7 +18,11 @@ function getPaginatedParks($connection, $page, $limit) {
 	$offset = ($page - 1) * $limit;
 
 	$select = "SELECT * from national_parks limit $limit offset $offset";
-	$statement = $connection->query($select);
+	$statement = $connection->prepare($select);
+	// Update the query(s) in national_parks.php to use prepared statements, in particular for the limit and offset.
+	$statement->bindValue(':offset', $offset, PDO::PARAM_INT);
+	$statement->bindValue(':limit', $limit, PDO::PARAM_INT);
+	$statement->execute();
 	return $statement->fetchAll(PDO::FETCH_ASSOC); 
 }
 
