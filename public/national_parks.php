@@ -43,7 +43,43 @@ function handleOutOfRangeRequests($page, $lastPage) {
 	}
 }
 
+function validateDate($date, $format = 'Y-m-d H:i:s') {
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
+}
+
+function inputsAreValid() {
+	if(!empty($_POST['name']) &&
+		!empty($_POST['location']) &&
+		!empty($_POST['date_established']) &&
+		!empty($_POST['area_in_acres']) &&
+		is_numeric($_POST['area_in_acres']) && 
+		validateDate($_POST['date_established'])) {
+
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function insertPark($connection) {
+	$insert = "INSERT INTO national_parks (name, location, area_in_acres, date_established, description) VALUES (:name, :location, :area_in_acres, :date_established, :description);";
+
+	$statement = $connection->prepare($insert);
+	$statement->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
+	$statement->bindValue(':location', $_POST['location'], PDO::PARAM_STR);
+	$statement->bindValue(':area_in_acres', $_POST['area_in_acres'], PDO::PARAM_STR);
+	$statement->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
+	$statement->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
+
+	$statement->execute();
+}
+
 function pageController($connection) {
+
+	if(!empty($_POST) && inputsAreValid()) {
+		insertPark($connection);
+	}
 
 	$data = [];
 	
