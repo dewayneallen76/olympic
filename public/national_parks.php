@@ -58,6 +58,7 @@ function pageController($connection) {
 extract(pageController($connection));
 
 
+
 ?>
 <!DOCTYPE html>
 	<html lang="en-us">
@@ -111,28 +112,29 @@ extract(pageController($connection));
 				<?php endif; ?>
 
 			</section>
-			<form>
+			<h1>Add A Park</h1>
+			<form method="post">
   				<div class="form-group">
     				<label for="exampleInputEmail1">Park Name</label>
-    				<input type="email" class="form-control" id="parkName" placeholder="Park Name">
+    				<input type="text" class="form-control" name="name" placeholder="Park Name">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Location</label>
-    				<input type="password" class="form-control" id="location" placeholder="Location">
+    				<input type="text" class="form-control" name="location" placeholder="Location">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Area in Acres</label>
-    				<input type="password" class="form-control" id="areaInAcres" placeholder="Area in Acres">
+    				<input type="number" class="form-control" name="area_in_acres" placeholder="Area in Acres">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Date Established</label>
-    				<input type="password" class="form-control" id="dateEstablished" placeholder="Date Established">
+    				<input type="text" class="form-control" name="date_established" placeholder="Date Established">
   				</div>
   				<div class="form-group">
     				<label for="exampleInputPassword1">Description</label>
-    				<input type="password" class="form-control" id="description" placeholder="Description">
+    				<input type="text" class="form-control" name="description" placeholder="Description">
   				</div>
-  				<button type="submit" class="btn btn-default">Submit</button>
+  				<button type="submit" class="btn btn-default" value="Submit">Submit</button>
 			</form>
 		</main>
 
