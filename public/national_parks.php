@@ -115,23 +115,23 @@ extract(pageController($connection));
 			<h1>Add A Park</h1>
 			<form method="post">
   				<div class="form-group">
-    				<label for="exampleInputEmail1">Park Name</label>
+    				<label for="name">Park Name</label>
     				<input type="text" class="form-control" name="name" placeholder="Park Name">
   				</div>
   				<div class="form-group">
-    				<label for="exampleInputPassword1">Location</label>
+    				<label for="location">Location</label>
     				<input type="text" class="form-control" name="location" placeholder="Location">
   				</div>
   				<div class="form-group">
-    				<label for="exampleInputPassword1">Area in Acres</label>
+    				<label for="area_in_acres">Area in Acres</label>
     				<input type="number" class="form-control" name="area_in_acres" placeholder="Area in Acres">
   				</div>
   				<div class="form-group">
-    				<label for="exampleInputPassword1">Date Established</label>
+    				<label for="date_establ">Date Established</label>
     				<input type="text" class="form-control" name="date_established" placeholder="Date Established">
   				</div>
   				<div class="form-group">
-    				<label for="exampleInputPassword1">Description</label>
+    				<label for="description">Description</label>
     				<input type="text" class="form-control" name="description" placeholder="Description">
   				</div>
   				<input type="submit" class="btn btn-default" value="Submit"></input>
