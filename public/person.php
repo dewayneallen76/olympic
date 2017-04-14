@@ -24,7 +24,7 @@ class Person
 
 $person = new Person("Dewayne", "Allen"); // Enforce rules when you construct an object
 
-echo $person->fullName(), PHP_EOL;
+// echo $person->fullName(), PHP_EOL;
 
 
  ?>

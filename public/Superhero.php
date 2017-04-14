@@ -11,9 +11,20 @@ class Superhero extends Person
     public $pseudonym;
     public $capeColor;
 
+    public function __construct($firstName, $lastName, $pseudonym)
+    {
+        parent::__construct($firstName, $lastName);
+        $this->pseudonym = $pseudonym;
+    }
+
+    public function fullName()
+    {
+        return $this->pseudonym;
+    }
+
     public function alterEgo()
     {
-        return 'Top Secret Alternate Ego: ' . $this->fullName();
+        return $this->firstName . ' ' . $this->lastName;
     }
 
     public function hasCape()
@@ -22,12 +33,9 @@ class Superhero extends Person
     }
 }
 
-$superman = new Superhero('Clark', 'Kent');
-$superman->pseudonym = 'Superman';
-$superman->capeColor = 'red';
-
-echo $superman->alterEgo(), PHP_EOL;
-var_dump($superman->hasCape());
+$superman = new Superhero('Clark', 'Kent', 'Superman');
+echo $superman->fullName() , PHP_EOL;
+echo $superman->alterEgo() , PHP_EOL;
 
 
  ?>
