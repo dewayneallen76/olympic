@@ -1,21 +1,30 @@
 <?php 
 class Person 
 {
-	public $name;
+
+	public $firstName;
+	public $lastName;
 	public $languages;
 
-	public function __construct($name, array $languages)
+	public $alterEgo;
+
+	public function __construct($firstName, $lastName)
 	{
-		$this->name = $name;
-		$this->languages = $languages;
+		$this->firstName = $firstName;
+		$this->lastName = $lastName;
 		
+		
+	}
+
+	public function fullName()
+	{
+		return $this->firstName . ' ' . $this->lastName; 
 	}
 }
 
-$person = new Person('Dewayne',['HTHL', 'PHP', 'MySQL']); // Enforce rules when you construct an object
+$person = new Person("Dewayne", "Allen"); // Enforce rules when you construct an object
 
-echo $person->name, PHP_EOL;
-print_r($person->languages) . PHP_EOL;
+echo $person->fullName(), PHP_EOL;
 
 
  ?>
