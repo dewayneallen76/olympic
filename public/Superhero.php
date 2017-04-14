@@ -6,6 +6,8 @@ require __DIR__ . "/person.php";
 // 2. Automobile.php, Car.php, Truck.php
 // 3. Classes/Objects are a way of organizing functionality. 
 
+
+
 class Superhero extends Person
 {
     public $pseudonym;
